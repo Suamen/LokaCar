@@ -20,8 +20,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void clicListeVoituresLouees (View view) {
-//        Intent intent = new Intent (this, ListeClientsActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent (this, liste_locations.class);
+        startActivity(intent);
     }
 
     public void clicChiffreAffaire (View view) {
