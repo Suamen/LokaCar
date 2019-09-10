@@ -19,25 +19,33 @@ public class Menu extends AppCompatActivity {
         final ImageButton listAffCAButton = findViewById(R.id.AfficherCA);
         final ImageButton listRVButton = findViewById(R.id.RestitutionVehicule);
 
-    }
-
-    public void clicListeVoituresDisponibles (View view) {
-//        Intent intent = new Intent (this, ListeVoituresActivity.class);
+        listVhDButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent (this, ListeVoituresActivity.class);
 //        startActivity(intent);
-    }
+            }
+        });
 
-    public void clicListeVoituresLouees (View view) {
-        Intent intent = new Intent (this, liste_locations.class);
-        startActivity(intent);
-    }
+        listVhLButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (Menu.this, liste_locations.class);
+                startActivity(intent);
+            }
+        });
 
-    public void clicChiffreAffaire (View view) {
-//        Intent intent = new Intent (this, ChiffreAffaireActivity.class);
-//        startActivity(intent);
-    }
+        listAffCAButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
-    public void clicRestitutionVoiture (View view) {
-//        Intent intent = new Intent (this, ListeLocationsActivity.class);
-//        startActivity(intent);
+        listRVButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+
     }
 }
