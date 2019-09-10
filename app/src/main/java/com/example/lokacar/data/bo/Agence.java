@@ -5,6 +5,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "agences")
+public
 class Agence {
     @PrimaryKey(autoGenerate = true)
     private int id;
