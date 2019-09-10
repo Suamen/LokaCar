@@ -1,5 +1,6 @@
 package com.example.lokacar.data.dal.dao;
 
+import androidx.room.Dao;
 import androidx.room.Query;
 
 import com.example.lokacar.data.bo.Vehicule;
@@ -7,6 +8,7 @@ import com.example.lokacar.data.dal.GeneriqueDAO;
 
 import java.util.List;
 
+@Dao
 public interface VehiculeDAO extends GeneriqueDAO<Vehicule> {
 
     @Query("SELECT * FROM vehicules")
