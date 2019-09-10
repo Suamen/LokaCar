@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.646"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/car_available" />
 
     <ImageButton
         android:id="@+id/ListeVehiculeLoue"
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/ListeVehiculeDispo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ListeVehiculeDispo"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/car_rent" />
 
     <ImageButton
         android:id="@+id/RestitutionVehicule"
