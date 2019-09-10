@@ -40,6 +40,8 @@ public class Menu extends AppCompatActivity {
         listAffCAButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (Menu.this, CaActivity.class);
+                startActivity(intent);
             }
         });
 

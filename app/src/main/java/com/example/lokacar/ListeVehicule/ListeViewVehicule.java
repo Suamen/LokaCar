@@ -18,9 +18,9 @@ public class ListeViewVehicule extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.ListeViewVehicule);
 
-        Vehicule tom = new Vehicule(150,"Tom","AV-HEH-25","Louée" );
-        Vehicule jerry = new Vehicule(300,"jerry","AV-knrktrnet-25","Louée" );
-        Vehicule donald = new Vehicule(200,"donald","AV-krkrk-25","Louée" );
+        Vehicule tom = new Vehicule("AV-HEH-25",180000,"Disponible",1 );
+        Vehicule jerry = new Vehicule("AB-HEH-25",160000,"Disponible",1 );
+        Vehicule donald = new Vehicule("AC-HEH-25",50000,"Disponible",1 );
 
         Vehicule[] users = new Vehicule[]{tom, jerry, donald};
 
