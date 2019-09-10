@@ -1,52 +1,117 @@
 package com.example.lokacar.data.bo;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity(tableName = "vehicules",
+        foreignKeys = {
+                @ForeignKey(entity = Agence.class, parentColumns = "id", childColumns = "agence_id")
+
+        })
 public class Vehicule {
 
-    private int prixLoc;
-    private String type;
-    private String plaqueImatriculation;
-    private String status;
+    public static final String DISPO = "Disponible";
+    public static final String LOUE = "Loué";
+    public static final String NON_DISPO = "Indisponible";
+    public static final String RESERVE = "Réservé";
 
+    @PrimaryKey
+    @NonNull
+    private String immat;
 
-    public Vehicule(int prixLoc, String type, String plaqueImatriculation, String status) {
-        this.prixLoc = prixLoc;
-        this.type = type;
-        this.plaqueImatriculation = plaqueImatriculation;
-        this.status = status;
+    private float kilometrage;
+    private String dispo;
+
+    @ColumnInfo(name = "agence_id")
+    private int agenceId;
+
+    @Ignore
+    private Agence agence;
+
+    @Ignore
+    public Vehicule() {
     }
 
-    public Vehicule(String status) {
+    @Ignore
+    public Vehicule(String immat) {
+        this.immat = immat;
     }
 
-    public int getPrixLoc() {
-        return prixLoc;
+    public Vehicule(@NonNull String immat, float kilometrage, String dispo, int agenceId) {
+        this.immat = immat;
+        this.kilometrage = kilometrage;
+        this.dispo = dispo;
+        this.agenceId = agenceId;
     }
 
-    public void setPrixLoc(int prixLoc) {
-        this.prixLoc = prixLoc;
+    public static List<String> getListEtat(){
+        List<String> listEtat = new ArrayList<>();
+
+        listEtat.add(DISPO);
+        listEtat.add(LOUE);
+        listEtat.add(NON_DISPO);
+        listEtat.add(RESERVE);
+
+        return listEtat;
     }
 
-    public String getType() {
-        return type;
+
+    @NonNull
+    public String getImmat() {
+        return immat;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setImmat(@NonNull String immat) {
+        this.immat = immat;
     }
 
-    public String getPlaqueImatriculation() {
-        return plaqueImatriculation;
+
+    public float getKilometrage() {
+        return kilometrage;
     }
 
-    public void setPlaqueImatriculation(String plaqueImatriculation) {
-        this.plaqueImatriculation = plaqueImatriculation;
+    public void setKilometrage(float kilometrage) {
+        this.kilometrage = kilometrage;
     }
 
-    public String getStatus() {
-        return status;
+    public String getDispo() {
+        return dispo;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDispo(String dispo) {
+        this.dispo = dispo;
+    }
+
+    public int getAgenceId() {
+        return agenceId;
+    }
+
+    public void setAgenceId(int agenceId) {
+        this.agenceId = agenceId;
+    }
+
+    public Agence getAgence() {
+        return agence;
+    }
+
+    public void setAgence(Agence agence) {
+        this.agence = agence;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicule{" +
+                "immat='" + immat + '\'' +
+                ", kilometrage=" + kilometrage +
+                ", dispo='" + dispo + '\'' +
+                ", agenceId=" + agenceId +
+                '}';
     }
 }
