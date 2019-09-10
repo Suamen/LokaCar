@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CaActivity"></activity>
-        <activity android:name=".liste_locations" />
+        <activity android:name=".ListeLocations" />
         <activity android:name=".Menu" />
         <activity
             android:name=".ui.login.LoginActivity"

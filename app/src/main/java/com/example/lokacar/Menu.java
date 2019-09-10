@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.lokacar.ListeVehicule.ListeViewVehicule;
@@ -32,7 +31,7 @@ public class Menu extends AppCompatActivity {
         listVhLButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Menu.this, liste_locations.class);
+                Intent intent = new Intent (Menu.this, ListeLocations.class);
                 startActivity(intent);
             }
         });
