@@ -192,11 +192,11 @@ public class LoginActivity extends AppCompatActivity {
         agenceDao.insertAgence(agence);
 
         // Insert VOITURE
-//        vehiculeDao.insert(new Vehicule("AA-123-CD", "Audi", null, 80000,
-//                false, true, null, new Agence(1, null, null, null)));
-//        vehiculeDao.insert(new Vehicule("AB-456-EF", "Peugeot", null, 100000,
-//                false, true, null, new Agence(1, null, null, null)));
-//        vehiculeDao.insert(new Vehicule("AC-789-GH", "Citroën", null, 210000,
-//                false, true, null, new Agence(1, null, null, null)));
+        vehiculeDao.insert(new Vehicule("354654", "Audi", null, 80000,
+                false, true, null, new Agence(1, null, null, null)));
+        vehiculeDao.insert(new Vehicule("AB456EF", "Peugeot", null, 100000,
+                false, true, null, new Agence(1, null, null, null)));
+        vehiculeDao.insert(new Vehicule("AC789GH", "Citroën", null, 210000,
+                false, true, null, new Agence(1, null, null, null)));
     }
 }
