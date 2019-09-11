@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.lokacar.ListeVehicule.ListeViewVehicule;
-
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -23,8 +21,6 @@ public class Menu extends AppCompatActivity {
         listVhDButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Menu.this, ListeViewVehicule.class);
-                startActivity(intent);
             }
         });
 
