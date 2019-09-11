@@ -1,32 +1,45 @@
 package com.example.lokacar.data.bo;
 
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
+import java.util.List;
 
-@Entity(tableName = "agences")
-public
-class Agence {
-    @PrimaryKey(autoGenerate = true)
+public class Agence {
+
     private int id;
-    private String nom;
-    private String adresse;
-    private String codePostal;
-    private String ville;
-    private String telephone;
+    private String nomAgence;
+    private Adresse adresse;
+    private Gerant gerant;
+    private List<Vehicule> listVehicule;
 
-    @Ignore
     public Agence() {
     }
 
-    public Agence(String nom, String adresse, String codePostal, String ville, String telephone) {
-        this.nom = nom;
+    public Agence(String nomAgence, Adresse adresse, Gerant gerant) {
+        this.nomAgence = nomAgence;
         this.adresse = adresse;
-        this.codePostal = codePostal;
-        this.ville = ville;
-        this.telephone = telephone;
+        this.gerant = gerant;
     }
 
+    public Agence(String nomAgence, Adresse adresse, Gerant gerant, List<Vehicule> listVehicule) {
+        this.nomAgence = nomAgence;
+        this.adresse = adresse;
+        this.gerant = gerant;
+        this.listVehicule = listVehicule;
+    }
+
+    public Agence(int id, String nomAgence, Adresse adresse, Gerant gerant) {
+        this.id = id;
+        this.nomAgence = nomAgence;
+        this.adresse = adresse;
+        this.gerant = gerant;
+    }
+
+    public Agence(int id, String nomAgence, Adresse adresse, Gerant gerant, List<Vehicule> listVehicule) {
+        this.id = id;
+        this.nomAgence = nomAgence;
+        this.adresse = adresse;
+        this.gerant = gerant;
+        this.listVehicule = listVehicule;
+    }
 
     public int getId() {
         return id;
@@ -36,56 +49,45 @@ class Agence {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getAdresse() {
+    public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
+    public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
 
-    public String getCodePostal() {
-        return codePostal;
+    public String getNomAgence() {
+        return nomAgence;
     }
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
+    public void setNomAgence(String nomAgence) {
+        this.nomAgence = nomAgence;
     }
 
-    public String getVille() {
-        return ville;
+    public Gerant getGerant() {
+        return gerant;
     }
 
-    public void setVille(String ville) {
-        this.ville = ville;
+    public void setGerant(Gerant gerant) {
+        this.gerant = gerant;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public List<Vehicule> getListVehicule() {
+        return listVehicule;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setListVehicule(List<Vehicule> listVehicule) {
+        this.listVehicule = listVehicule;
     }
-
 
     @Override
     public String toString() {
         return "Agence{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", codePostal='" + codePostal + '\'' +
-                ", ville='" + ville + '\'' +
-                ", telephone='" + telephone + '\'' +
+                "adresse=" + adresse +
+                ", nomAgence='" + nomAgence + '\'' +
+                ", gerant=" + gerant +
+                ", listVehicule=" + listVehicule +
                 '}';
     }
 }

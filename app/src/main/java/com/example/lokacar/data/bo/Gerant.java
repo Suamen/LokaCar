@@ -1,40 +1,49 @@
 package com.example.lokacar.data.bo;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
+public class Gerant extends Personne {
 
-import com.example.lokacar.data.bo.Agence;
-
-
-@Entity(tableName = "gerants",
-        foreignKeys = {
-                @ForeignKey(entity = Agence.class, parentColumns = "id", childColumns = "agence_id")
-        })
-public class Gerant {
-    @PrimaryKey(autoGenerate = true)
     private int id;
-    private String prenom;
-    private String nom;
-    private String email;
-    private String motPasse;
+    private String login;
+    private String mdp;
 
-    @ColumnInfo(name = "agence_id") // foreignKey
-    private int agenceId;
-
-
-    @Ignore
     public Gerant() {
     }
 
-    public Gerant(String prenom, String nom, String email, String motPasse, int agenceId) {
-        this.prenom = prenom;
-        this.nom = nom;
-        this.email = email;
-        this.motPasse = motPasse;
-        this.agenceId = agenceId;
+    public Gerant(int id) {
+        this.id = id;
+    }
+
+    public Gerant(String nom, String prenom, Adresse adresse, String tel, String email, String login, String mdp) {
+        super();
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setAdresse(adresse);
+        this.setTel(tel);
+        this.setEmail(email);
+        this.login = login;
+        this.mdp = mdp;
+    }
+
+    public Gerant(int id, String nom, String prenom, Adresse adresse, String tel, String email) {
+        super();
+        this.id = id;
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setAdresse(adresse);
+        this.setTel(tel);
+        this.setEmail(email);
+    }
+
+    public Gerant(int id, String nom, String prenom, Adresse adresse, String tel, String email, String login, String mdp) {
+        super();
+        this.id = id;
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setAdresse(adresse);
+        this.setTel(tel);
+        this.setEmail(email);
+        this.login = login;
+        this.mdp = mdp;
     }
 
 
@@ -46,54 +55,32 @@ public class Gerant {
         this.id = id;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getLogin() {
+        return login;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getNom() {
-        return nom;
+    public String getMdp() {
+        return mdp;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMotPasse() {
-        return motPasse;
-    }
-
-    public void setMotPasse(String motPasse) {
-        this.motPasse = motPasse;
-    }
-
-    public int getAgenceId() {
-        return agenceId;
-    }
-
-    public void setAgenceId(int agenceId) {
-        this.agenceId = agenceId;
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
     @Override
     public String toString() {
-        return "Gerant{" +
-                ", prenom='" + prenom + '\'' +
-                ", nom='" + nom + '\'' +
-                ", email='" + email + '\'' +
-                ", motPasse='" + motPasse + '\'' +
-                ", agence=" + agenceId +
-                '}';
+        return "Gerant{"
+                + "id =" + id + ", "
+                + "nom = " + getNom() + ", "
+                + "prenom = " + getPrenom() + ", "
+                + "adresse = " + getAdresse() + ", "
+                + "tél = " + getTel() + ", "
+                + "email = " + getEmail() + ", "
+                + "login = " + login + ", "
+                + "mdp = " + mdp;
     }
 }
