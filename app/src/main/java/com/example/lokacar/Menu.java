@@ -21,6 +21,8 @@ public class Menu extends AppCompatActivity {
         listVhDButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (Menu.this, ListVehicules.class);
+                startActivity(intent);
             }
         });
 
