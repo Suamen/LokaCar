@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         loginError = (TextView) findViewById(R.id.textViewError);
 
         // Init des données
-        //initData();
+        initData();
 
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
@@ -180,23 +180,26 @@ public class LoginActivity extends AppCompatActivity {
     public void initData() {
 
         //1ère insertion dans la base Gérant pour pouvoir s'identifier :
-        Gerant gerant = new Gerant("MOREL", "Patrick", null,
-                "0635259481", "patrick.morel2017@campus-eni.fr", "morel", "mdptest");
-        gerantDao.insertGerant(gerant);
-        gerantDao.insertGerant(new Gerant("Doe", "John", null, "0652859574",
-                "john.doe@gmail.com", "admin", "admintest"));
+//        Gerant gerant = new Gerant("MOREL", "Patrick", null,
+//                "0635259481", "patrick.morel2017@campus-eni.fr", "morel", "mdptest");
+//        gerantDao.insertGerant(gerant);
+//        gerantDao.insertGerant(new Gerant("Doe", "John", null, "0652859574",
+//                "john.doe@gmail.com", "admin", "admintest"));
 
         //1ère insertion dans la base Agence :
-        Agence agence = new Agence("RENNES", null, new Gerant(1));
-        agenceDao = new AgenceDao(LoginActivity.this);
-        agenceDao.insertAgence(agence);
+//        Agence agence = new Agence("RENNES", null, new Gerant(1));
+//        agenceDao = new AgenceDao(LoginActivity.this);
+//        agenceDao.insertAgence(agence);
 
         //Insert VOITURE
-        vehiculeDao.insert(new Vehicule("354654", "Audi", null, 80000,
-                false, true, null, new Agence(1, null, null, null)));
-        vehiculeDao.insert(new Vehicule("AB456EF", "Peugeot", null, 100000,
-                false, true, null, new Agence(1, null, null, null)));
-        vehiculeDao.insert(new Vehicule("AC789GH", "Citroën", null, 210000,
-                false, true, null, new Agence(1, null, null, null)));
+//        vehiculeDao.insert(new Vehicule("354654", "Audi", null, 80000,
+//                false, true, null, new Agence(1, null, null, null)));
+//        vehiculeDao.insert(new Vehicule("AB456EF", "Peugeot", null, 100000,
+//                false, true, null, new Agence(1, null, null, null)));
+//        vehiculeDao.insert(new Vehicule("AC789GH", "Citroën", null, 210000,
+//                false, true, null, new Agence(1, null, null, null)));
+//        vehiculeDao.insert(new Vehicule("3542578", "Citroën", "2131165282", 80001,
+//                false, true, null, new Agence(1, null, null, null)));
+
     }
 }

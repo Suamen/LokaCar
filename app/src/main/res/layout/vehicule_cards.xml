@@ -9,15 +9,21 @@
         android:id="@+id/marque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10sp"
+        android:paddingStart="15sp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/immat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10sp"
+        android:paddingStart="15sp"
         android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/no_picture" />
 
     <Space
         android:layout_width="match_parent"
