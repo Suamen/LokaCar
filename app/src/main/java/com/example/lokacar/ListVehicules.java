@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.lokacar.data.bo.Agence;
 import com.example.lokacar.data.bo.Vehicule;
@@ -145,11 +148,13 @@ public class ListVehicules extends AppCompatActivity {
             return null;
         }
     };
+    private ImageButton ajouterVehicule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_vehicules);
+        ajouterVehicule = findViewById(R.id.ajouterVehicule);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerviewvh);
 
         // use this setting to improve performance if you know that changes
@@ -167,6 +172,15 @@ public class ListVehicules extends AppCompatActivity {
         //specify an adapter (see also next example)
         mAdapter = new MyAdapter(listVehicules);
         mRecyclerView.setAdapter(mAdapter);
+
+        ajouterVehicule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (ListVehicules.this, ajouterVehicule.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
 

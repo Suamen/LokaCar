@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ajouterVehicule"></activity>
         <activity android:name=".CaActivity" />
         <activity android:name=".ListeLocations" />
         <activity android:name=".ListVehicules" />
